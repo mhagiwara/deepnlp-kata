@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Deep NLP Kata - Practice Exercises for Deep Learning and Natural Language Processing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Deep NLP Kata</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section1">Section 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section2">Section 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section3">Section 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section4">Section 4</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section5">Section 5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section6">Section 6</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section7">Section 7</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section8">Section 8</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section9">Section 9</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#section10">Section 10</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-info text-white">
+      <div class="container text-center">
+        <h1>Deep NLP Kata</h1>
+        <p class="lead">Practice Exercises for Deep Learning and Natural Language Processing</p>
+      </div>
+    </header>
+
+    <section id="about" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>About</h2>
+            <p class="lead">Deep NLP Kata is a set of practice exercises (<i>"Katas"</i>) that help you familiarize with the basic concepts of deep learning for natural language processing. Each exercise is designed to be fun, practical, and bite-sized (i.e., can be completed in less than 30 minutes). </p>
+            <p>Those exercises do not depend on the language nor the framework you use. Before starting this exercises, make sure to install the programming language and the framework of your choice and set up the environment.
+                We recommend Python + any of major neural network frameworks, such as <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://keras.io/">Keras</a>, <a href="http://pytorch.org/">PyTorch</a>, and <a href="http://caffe.berkeleyvision.org/">Caffe</a>. </p>
+
+            <p>Note that this it <i>not</i> an introductory course for machine learning, deep learning, nor programming. We assume you already know (or know how to Google) the basics of linear algebra, neural networks, and machine learning, as well as how to implement them.</p>
+
+            <p>If you have any feedback / comments / suggestions for this kata, visit the <a href="https://github.com/mhagiwara/deepnlp-kata">Github repo</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 1. Linear Algebra Basics</h2>
+            <p class="lead">These exercises help you familiarize yourself with the basic building blocks of neural network computation, such as vectors, matrices, and operations.</p>
+            <ul>
+              <li>
+                  <b>Kata 1</b>
+                  <p>Calcualte \( 2 + 3 \) using your framework, i.e., <i>not</i> just using Python operations but using e.g., <code>tf.Tensor</code> and <code>torch.Tensor</code>.</p>
+              </li>
+
+              <li>
+                  <b>Kata 2</b>
+                  <p>Caluclate the inner product of two vectors: \( v_1 = [1 \ 3 \ -5] \) and \( v_2 = [4 \ -2 \ -1] \).</p>
+              </li>
+              <li>
+                  <b>Kata 3</b>
+                  <p>Calucalte the product of two matrices:
+                      $$ m_1 = \begin{bmatrix} -1 & 2 & 3 \\ 4 & -2 & 0 \end{bmatrix} $$ and
+                      $$ m_2 = \begin{bmatrix} -2 & -3 \\ 4 & 1 \\ 0 & 1 \end{bmatrix}. $$</p>
+              </li>
+              <li>
+                  <b>Kata 4</b>
+                  <p>Consider this linear model: \( y = xw + b \), where \( w = [2 \ -1]^T \) and \( b = 1 \).</p>
+                  <p>What is the value of \( y \) when \(x = [1 \ 1], [0 \ 1], [1 \ 0] \), respectively?</p>
+              </li>
+
+              <li>
+                  <b>Kata 5</b>
+                  <p>Consider the linear model \( y = xw + b \), where the values of \( w \) and \( b \) are unknown.</p>
+                  <p>When the values of \( x \) are \(x = [1 \ 1], [0 \ 1], [1 \ 0] \), the values of \( y \) are 2, 0, 3, respectively. Solve for \( w \) and \( b \).</p>
+                  <p>First, compute the <a href="https://en.wikipedia.org/wiki/Design_matrix">design matrix</a>:
+                      $$ X = \begin{bmatrix}
+                        1 & x^1_1 & x^1_2  \\
+                        1 & x^2_1 & x^2_2  \\
+                        1 & x^3_1 & x^3_2
+                        \end{bmatrix}, $$
+                  where \( x^i_j \) is the j-th dimension of i-th training instance. Then, the solution for \( b \) and \( w \) is given by:
+                      $$
+                        (X^T X)^{-1} X^T y
+                      $$
+                </p>
+              </li>
+
+              <li>
+                  <b>Kata 6</b>
+                  <p>Compute the mean squared loss between two vectors: \(y_1 = [1 \ 1 \ 1]\) and \(y_2 = [2 \ 0 \ 3]\).<p>
+              </li>
+
+              <li>
+                  <b>Kata 7</b>
+                  <p>Consider the linear model \( y = xw + b \), where \( w = [0 \ 0]^T \) and \( b = 0 \).
+                    For input \(x = [1 \ 1], [0 \ 1], [1 \ 0] \), compute the output (\( y \)) of the model. What is the mean squared loss between \( y \) and desired output \( y = [2 \ 0 \ 3] \)?</p>
+                  <p>Also, compute the gradient of the loss w.r.t \( w \) and \( b \).<p>
+              </li>
+
+              <li>
+                  <b>Kata 8</b>
+                  <p>Consider the logistic regression model \( y = \sigma(xw + b) \) where \( w = [0 \ 0]^T \), \( b = 1 \), and \( \sigma \) is a <a href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a>.</p>
+                  <p>What are the values of \( y \) for input \(x = [1 \ 1], [0 \ 1], [1 \ 0] \), respectively?</p>
+              </li>
+
+              <li>
+                  <b>Kata 9</b>
+                  <p>Compute the cross entropy loss between the output of Kata 8 and desied output \( \hat{y} = [1 \ 0 \ 0] \).</p>
+              </li>
+
+              <li>
+                  <b>Kata 10</b>
+                  <p>Compute the gradient of the cross entropy loss from Kata 9 w.r.t \( w \) and \( b \).</b>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section2" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 2. Feed-forward Neural Networks</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 3. Word Embeddings</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 4. Language Modeling</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 5. Text Generation</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section6">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 6. Text Classification</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section7">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 7. Sequence-to-Sequence Models</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section8">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 8. Attention</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="section9">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 9. Convolutional Neural Networks</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section10">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Section 10. (TBD)</h2>
+            <p class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Masato Hagiwara 2018.<br />
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  </body>
+
+</html>
