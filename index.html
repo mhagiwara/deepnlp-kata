@@ -184,7 +184,42 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>Section 2. Feed-forward Neural Networks</h2>
-            <p class="lead"></p>
+            <p class="lead">In this section, we'll start building feed-forward neural networks using the building blocks we learned previously.</p>
+            <ul>
+              <li>
+                  <b>Kata 11</b>
+                  <p>Let's generate some fake data for regression. Let \( \hat{w} = [2 \ -1] \) and \( \hat{b} = 1 \). These are the parameters you want your neural network to learn. Going forward, pretend you don't know the "true" values of these parameters.<p>
+                  <p>First, generate a number (e.g., 100) of two dimensional vectors whose values are drawn randomly from a standard normal distribution (Gaussian distribution with \( \mu = 0 \) and \(\sigma = 1\)). Let this be \( \mathbf{x} \).
+                     Second, generate the desired output \( \mathbf{\hat y} \) s.t. \( \mathbf{\hat y} = \mathbf{x} \hat{w} + \hat{b} \).</p>
+              </li>
+
+              <li>
+                  <b>Kata 12</b>
+                  <p>Build a feed-forward neural network that has one densely connected linear layer. It takes \( \mathbf{x} \) as input and output \( \mathbf{y} = \mathbf{x} w + b \). Initialize \( w = [0 \ 0] \) and \( b = 0 \). What does \( \mathbf{y} \) look like?</p>
+
+                  <p>Optionally, you can mini-batch the input \( \mathbf{x} \).</p>
+              </li>
+
+              <li>
+                  <b>Kata 13</b>
+                  <p>Compute the mean squared loss between \( \mathbf{y} \) and \( \mathbf{\hat y} \).</p>
+              </li>
+
+              <li>
+                  <b>Kata 14</b>
+                  <p>Back-propagate the gradient of the loss function and update the model parameters (connection weights and bias of the linear layer) so that the loss is minimized. Iterate this over the training data (i.e., \( \mathbf{x} \) and \( \mathbf{\hat y} \)) multiple times.
+                     Log the values of the loss function. If your model and training pipeline is working correctly, those values should decrease as you iterate.</p>
+              </li>
+
+              <li>
+                  <b>Kata 15</b>
+                  <p>Build another feed-forward neural network that has one two-dimensional "hidden" layer. In other words, this model has two sets of connections:
+                      <ul>
+                          <li>input(2) &rarr;(linear)&rarr; hidden(2) and </li>
+                          <li>hidden(2)&rarr;(linear)&rarr;output(1),</li>
+                      </ul>
+                    where the numbers in ( ) are dimensions of each layer.</p>
+              </li>
           </div>
         </div>
       </div>
