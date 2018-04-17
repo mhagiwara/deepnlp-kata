@@ -220,6 +220,38 @@
                       </ul>
                     where the numbers in ( ) are dimensions of each layer.</p>
               </li>
+
+              <li>
+                <b>Kata 16</b>
+                <p>As you did in Kata 14, train the model you just created in Kata 15 by back-propagating the loss and updating the model parameters.</p>
+                <p>What does the loss decrease look like in comparison to the previous Kata?</p>
+              </li>
+
+              <li>
+                <b>Kata 17</b>
+                <p>Add ReLU (Rectified Linear Unit) as the activation function (non-linearity) to the hidden layer, and train the model.</p>
+                <p>Also, try the Tanh and Sigmoid functions. Which activation functions perform better in terms of reducing the loss?</p>
+              </li>
+
+              <li>
+                <b>Kata 18</b>
+                <p>Now, let's turn to a classification problem and generate some fake data for it. Let \( \hat{w} = [2 \ -1] \) and \( \hat{b} = 1 \).</p>
+                <p>First, as we did in Kata 11, let's generate a bunch (maybe 100) of two-dimensional vectors from a standard Gaussian distribution. Let this be \( \mathbf{x} \).</p>
+                <p>Second, let \( \mathbf{p} = \sigma(\mathbf{x} \hat{w} + \hat{b}) \), where \( \sigma() \) is the element-wise sigmoid function.</p>
+                <p>Finally, generate \( \mathbf{\hat y} \) s.t. \( y_i = 1 \) if \( p_i > 0.5\) and 0 otherwise, where \( y_i \) and \( p_i \) are the i-th element of \( \mathbf{\hat y} \) and \( \mathbf{p} \), respectively.</p>
+              </li>
+
+              <li>
+                <b>Kata 19</b>
+                <p>Create a feed-forward neural network that has one two-dimensional hidden layer with the Tanh activation function, as you did in Kata 17.</p>
+                <p>Add a sigmoid activation function on top of the output layer, so that the network can output a probability between 0 and 1 instead a real value.</p>
+              </li>
+
+              <li>
+                <b>Kata 20</b>
+                <p>Define a <a href="https://en.wikipedia.org/wiki/Cross_entropy">cross entropy loss</a> between the output of the network \( \mathbf{y} \) and the target \( \mathbf{\hat y} \).</p>
+                <p>Back-propagate the gradient of the loss function and update the model parameters.</p>
+              </li>
           </div>
         </div>
       </div>
