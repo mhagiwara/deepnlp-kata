@@ -262,6 +262,65 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>Section 3. Word Embeddings</h2>
+            <p class="lead">In this section, we'll be building so-called word2vec models, namely skip-gram and CBOW (continous bag-of-words) models. In terms of architecture, they are very simple feed-forward neural networks.</p>
+              <ul>
+                <li>
+                  <b>Kata 21</b>
+                  <p>First of all, let's prepare the data set for the word2vec models. Go to <a href="http://mattmahoney.net/dc/textdata.html">Matt Mahoney's page</a>, find and download <a href="http://mattmahoney.net/dc/text8.zip">text8.zip</a>, and unzip it.
+                     This file, consisting of 100M-character excerpts from cleaned English Wikipedia, is often used for testing word2vec algorithms.</p>
+                  <p>Second, read the text, split into words by whitespace, and convert words into word indices. In doing so, you want to limit the size of the vocabulary to \( N \) (say, the most frequent 10,000 words).
+                     You can do this in the following fashion:</p>
+                  <ol>
+                    <li>Go through the text (list of words) and count the word occurrences, i.e., number of times each word appears in the text. Python's <code>Counter</code> comes in handy here.</li>
+                    <li>Sort the list of unique words by their occurrences, and retain the top \( N - 1 \) most frequently occurring words. (Why \( N - 1 \) not \( N \)? See below.)</li>
+                    <li>Assign an integer index from 1 to \( N - 1\) for each unique word in this word list. Now you created a look-up table that converts words to their indices.</li>
+                    <li>Go through the text again while looking up in the word-index table.</li>
+                    <li>Since the table only contains top-\(N-1\) words, you'll encounter words that are not in the list. Replace such words with a special token <code>UNK</code>. Assign index=0 to <code>UNK</code>, that is, those "out-of-vocabulary" words are assigned an index of 0.</li>
+                  </ol>
+                  <p>If you do this correctly, you'll have created a long list of word indices, which are integers ranging from 0 to \( N - 1 \). </p>
+                </li>
+
+                <li>
+                  <b>Kata 22</b>
+                  <p>The skip-gram model is trained so that the neural network can solve this "fake task": given a word in text, it predicts what types of words tend to appear in its context. Create the training data for this task as follows:</p>
+                  <ol>
+                    <li>For each word (let this be \( w_t \)) in the data set, define its context by taking \( c \) words before and \( c \) words after. \( c \) here is called window size.</li>
+                    <li>Pick \( k \) (usually \( k \) = 2) words randomly from this "window", and let it be \( w_{t+j} \), where \( j \) is the integer offset from \( w_t \). </li>
+                    <li>Now, pairs \( (w_t, w_{t+j}) \) for each \( j \) you picked is the training data.</li>
+                  </ol>
+                  <p>In machine learning, we usually group such training pairs into <i>minibatches</i>.
+                     Continue this process for different values of \( t \) and \( j \) until you have \( b \) such pairs. Group them into a minibatch. </p>
+                </li>
+
+                <li>
+                  <b>Kata 23</b>
+                  <p>The key to word2vec models is <i>word embeddings</i>, which are semantic representations of words through dense, real-valued vectors. Word2vec models convert input/output words to embeddings and use them for prediction.</p>
+                  <p>Conversion from words to embeddings is usually done via an <i>embedding matrix</i>, which works as a look-up table from word IDs to their corresponding embedding vectors.
+                     First, define an embedding matrix in your programming language/framework. Second, represent a word via a one-hot vector, which is a sparse, integer vector where i-th element (i = ID of the word) is 1 and everything else is 0.
+                     Finally, the corresponding word vector is obtained by multiplying this one-hot vector with the embedding matrix. (Note that most modern neural network frameworks have a built-in implementation for this whole pipeline).</p>
+                </li>
+
+                <li>
+                  <b>Kata 24</b>
+                  <p>Implement the skip-gram model. First, using the embedding matrix above, obtain the input word vector. Let this be \( v_{w_I} \).
+                     Second, using another embedding matrix (but with the same size and shape), obtain the output word vector \( v'_{w_O} \). Take the inner product between those two. Finally, normalize this by considering all words in the vocabulary using softmax:</p>
+                     $$
+                       p(w_O | w_I) = \frac{\exp({v'_{w_O}}^T v_{w_I})}{\sum_{w \in V} \exp({v'_w}^T v_{w_I})) },
+                     $$
+                     where \( V \) is the vocabulary. The loss function is the sum of the logarithm of the probability above over all training pairs:
+                     $$
+                       \sum_{(w_O, w_I) \in X} \log P(w_O | w_I).
+                     $$
+                     <p>Train your skip-gram model by maximizing the log probability above.</p>
+                </li>
+
+                <li>
+                  <b>Kata 25</b>
+                  <p>After training the skip-gram model, as a by-product you end up with the "optimized" embedding matrix, whose rows correspond to what you want as word vectors.</p>
+                  <p>Pick one word arbitrarily from the vocabulary (say, "dog"), and compute the <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> between this word vector and every other word vector in the vocabulary, and
+                     sort the words by this similarity. Do you see similar words to the one you picked?</p>
+                </li>
+              </ul>
             <p class="lead"></p>
           </div>
         </div>
